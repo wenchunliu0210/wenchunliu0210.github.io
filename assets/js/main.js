@@ -107,11 +107,12 @@ const downloadPDF = async () => {
 const pdfButton = document.getElementById('pdf-button')
 
 const generatePDF = () => {
+  const theme = getCurrentTheme()
   return new Promise((resolve, reject) => {
     const element = document.getElementById('resume-pdf-area')
     const opt = {
       margin:       0,
-      filename:     'wenchunliu_Resume.pdf',
+      filename:     `wenchunliu_Resume--${theme}.pdf`,
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 3 },
       jsPDF:        { format: 'a4', orientation: 'portrait' }
