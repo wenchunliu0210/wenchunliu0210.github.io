@@ -1,0 +1,50 @@
+/*==================== Scale CV Variables ====================*/
+body.scale-cv {
+  --font-size-h1: .95rem;
+  --font-size-h2: .95rem;
+  --font-size-h3: .875rem;
+  --font-size: .825rem;
+  --font-size-sm: .75rem;
+  --font-size-xs: .7rem;
+  --max-width: 968px;
+}
+
+.scale-cv .home-pdf__button--pc,
+.scale-cv .change-theme {
+  display: none;
+}
+
+.scale-cv .home__avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.scale-cv .icon {
+  font-size: 1rem;
+}
+
+.scale-cv .education__container,
+.scale-cv .experiences__container {
+  gap: 1.03rem;
+}
+
+.scale-cv .experience__rounder {
+  width: 11px;
+  height: 11px;
+  margin-top: .22rem;
+}
+
+.scale-cv .experience__line {
+  height: calc(100% + 1rem);
+  transform: translate(4px, 0);
+}
+
+.scale-cv .skill__name {
+  margin-bottom: var(--margin-1);
+}
+
+@media screen and (min-width: 768px) {
+  .scale-cv .interests__container {
+    column-gap: 4rem;
+  }
+}

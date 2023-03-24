@@ -1,12 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wen Chun Liu's Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Wen Chun Liu's Responsive Resume CV</title>
+
+  <meta name="description" content="Wen Chun Liu's responsive resume CV with light/dark theme and export PDF features, created using native HTML, CSS, and JavaScript.">
+  <meta name="author" content="Wen Chun Liu" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles_dark.css">
+  <link rel="stylesheet" href="assets/css/styles_print.css">
+
+  <meta property="og:url" content="https://wenchunliu0210.github.io/" />
+  <meta property="og:title" content="Wen Chun Liu's Responsive Resume CV" />
+  <meta property="og:description" content="Wen Chun Liu's responsive resume CV with light/dark theme and export PDF features, created using native HTML, CSS, and JavaScript." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="" />
+
+  <meta name="twitter:title" content="Wen Chun Liu's Responsive Resume CV" />
+  <meta name="twitter:description" content="Wen Chun Liu's responsive resume CV with light/dark theme and export PDF features, created using native HTML, CSS, and JavaScript." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    Hi there! I am Wen Chun Liu!
+  <header class="mobile-header" id="mobile-header">
+    <nav class="nav bd-container">
+      <a href="#" class="nav__logo">Wen Chun</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <!-- Home -->
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">
+              <i class='bx bx-home-heart icon'></i>Home
+            </a>
+          </li>
+          <!-- Social -->
+          <li class="nav__item">
+            <a href="#social" class="nav__link">
+              <i class='bx bx-link icon'></i>Social
+            </a>
+          </li>
+          <!-- Profile -->
+          <li class="nav__item">
+            <a href="#profile" class="nav__link">
+              <i class='bx bx-user icon'></i>Profile
+            </a>
+          </li>
+          <!-- Education -->
+          <li class="nav__item">
+            <a href="#education" class="nav__link">
+              <i class='bx bxs-graduation icon'></i>Education
+            </a>
+          </li>
+          <!-- Skills -->
+          <li class="nav__item">
+            <a href="#skills" class="nav__link">
+              <i class='bx bx-cog icon'></i>Skills
+            </a>
+          </li>
+          <!-- Experiences -->
+          <li class="nav__item">
+            <a href="#experiences" class="nav__link">
+              <i class='bx bx-briefcase-alt-2 icon'></i>Experiences
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-grid-alt'></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main bd-container">
+    <!-- PDF Contents -->
+    <div class="resume-pdf" id="resume-pdf-area">
+      <div class="resume-pdf__left">
+        <!-- Home -->
+        <section class="home" id="home">
+          <div class="home__container section bd-grid">
+            <div class="home__introductions bd-grid">
+              <!-- <img
+                src="assets/img/profile-photo_light.jpg"
+                alt="avatar"
+                class="home__avatar"
+                id="home__avatar"
+              > -->
+              <span class="home__avatar" id="home__avatar"></span>
+              <h1 class="home__title">Wen Chun <b>Liu</b></h1>
+              <h3 class="home__profession">Front-end Developer</h3>
+              <!-- Mobile CV download button -->
+              <div>
+                <!-- <a
+                  download=""
+                  href="assets/pdf/wenchunliu_Resume--light.pdf"
+                  class="home-pdf__button--mobile"
+                  id="home-pdf__button--mobile"
+                >
+                  Download
+                </a> -->
+                <button
+                  class="home-pdf__button--mobile"
+                  id="home-pdf__button--mobile"
+                  onclick="downloadPDF()"
+                >
+                  Download
+                </button>
+              </div>
+            </div>
+
+            <div class="home__information bd-grid">
+              <!-- Address -->
+              <span class="home__info address">
+                <i class="bx bx-map icon"></i>Taipei City, Taiwan(R.O.C)
+              </span>
+              <!-- Email -->
+              <span class="home__info email">
+                <i class="bx bx-envelope icon"></i>a0953535160@gmail.com
+              </span>
+              <!-- Phone -->
+              <span class="home__info phone">
+                <i class="bx bx-phone icon"></i>(+886) 979858160
+              </span>
+            </div>
+          </div>
+          <!-- Dark/Light Theme Switch button -->
+          <i class='bx bx-moon change-theme' title="Theme" id="theme-button"></i>
+          <!-- PC CV download button -->
+          <i class='bx bx-download home-pdf__button--pc' title="Generate PDF" id="pdf-button"></i>
+        </section>
+        <!-- Social -->
+        <section class="social section" id="social">
+          <h2 class="section-title">SOCIAL</h2>
+
+          <div class="social__container bd-grid">
+            <a
+              class="social__link"
+              href="https://www.linkedin.com/in/wen-chun-l-72a6491a0"
+              rel="noopener noreferrer"
+            >
+              <i class='bx bxl-linkedin-square icon'></i> @wenchunliu0210
+            </a>
+            <a
+              class="social__link"
+              href="https://github.com/wenchunliu0210"
+              rel="noopener noreferrer"
+            >
+              <i class='bx bxl-github icon'></i> @wenchunliu0210
+            </a>
+            <a
+              class="social__link"
+              href="https://twitter.com/be_unique0210"
+              rel="noopener noreferrer"
+            >
+              <i class='bx bxl-twitter icon'></i> @wenchunliu0210
+            </a>
+          </div>
+        </section>
+        <!-- Profile -->
+        <section class="profile section" id="profile">
+          <h2 class="section-title">Profile</h2>
+
+          <p class="profile__description">
+            Innovative and meticulous front-end developer with 2 years of experience building responsive websites in the IT industry. Proficient with HTML, CSS and JavaScript frameworks, with additional knowledge of UX and user psychology.
+          </p>
+        </section>
+        <!-- Education -->
+        <section class="education section" id="education">
+          <h2 class="section-title">Education</h2>
+
+          <div class="education__container bd-grid">
+            <h3 class="education__title">Bachelor of Computer Science</h3>
+            <span class="education__studies">National Central University, Taiwan(R.O.C)</span>
+            <span class="education__year">Sept 2016 - June 2020</span>
+          </div>
+        </section>
+        <!-- Skills -->
+        <section class="skills section" id="skills">
+          <h2 class="section-title">Skills</h2>
+
+          <div class="skills__container bd-grid">
+            <ul class="skills__overview">
+              <li class="skill__name">
+                <span class="skill__circle"></span> HTML
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> CSS
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Sass/Scss
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Stylus
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Bootstrap4
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Element UI
+              </li>
+            </ul>
+            <ul class="skills__overview">
+              <li class="skill__name">
+                <span class="skill__circle"></span> JavaScript
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> TypeScript
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Vue.js
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Nuxt.js
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Git
+              </li>
+              <li class="skill__name">
+                <span class="skill__circle"></span> Markdown
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="resume-pdf__right">
+        <!-- Experiences -->
+        <section class="experiences section" id="experiences">
+          <h2 class="section-title">Experiences</h2>
+
+          <div class="experiences__container bd-grid">
+            <div class="experience__content">
+              <div class="experience__time">
+                <span class="experience__rounder"></span>
+                <span class="experience__line"></span>
+              </div>
+
+              <div class="experience__information bd-grid">
+                <h3 class="experience__title">Web Front-end Assistant Engineer</h3>
+                <span class="experience__company">BCow Tech, Ltd.</span>
+                <span class="experience__year">Sept 2020 – Jan 2021</span>
+
+                <h3 class="experience__title">Web Front-end Engineer</h3>
+                <span class="experience__company">BCow Tech, Ltd.</span>
+                <span class="experience__year">Jan 2021 – Aug 2021</span>
+
+                <ul class="experience__description">
+                  <li>
+                    <span class="square"></span>
+                    Assisted the development team in maintaining and updating the projects designed in MVC architectural pattern.
+                  </li>
+                  <li>
+                    <span class="square"></span>
+                    Participated in each step of the product development process from ideation to development improvement, recommending ideas and overhauling the UI to help build a more user-friendly interface.
+                  </li>
+                  <li>
+                    <span class="square"></span>
+                    Collaborated with UI/UX designers to ensure the designs were efficient and technically sound.
+                  </li>
+                  <li>
+                    <span class="square"></span>
+                    Created responsive web views using modern CSS techniques and JavaScript frameworks.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="experience__content">
+              <div class="experience__time">
+                <span class="experience__rounder"></span>
+              </div>
+
+              <div class="experience__information bd-grid">
+                <h3 class="experience__title">Front-end Engineer</h3>
+                <span class="experience__company">iStaging Co., Ltd.</span>
+                <span class="experience__year">Feb 2022 – Present</span>
+                <ul class="experience__description">
+                  <li>
+                    <span class="square"></span>
+                    Daily maintenance of code, debugging issues and solving clients’ problems.
+                  </li>
+                  <li>
+                    <span class="square"></span>
+                    Revamped and built new features to provide better user experiences and higher conversion rate.
+                  </li>
+                  <li>
+                    <span class="square"></span>
+                    Presented findings in a clear and concise manner to coworkers.
+                  </li>
+                  <li>
+                    <span class="square"></span>
+                    Assisted new hires, interns, or fresh engineers in finding solutions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Languages -->
+        <section class="languages section" id="languages">
+          <h2 class="section-title">Languages</h2>
+
+          <div class="languages__container">
+            <ul class="languages__overview bd-grid">
+              <li class="language__name">
+                <span class="language__circle"></span> Mandarin
+              </li>
+              <li class="language__name">
+                <span class="language__circle"></span> English
+              </li>
+              <li class="language__name">
+                <span class="language__circle"></span> Taiwanese
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- Interests -->
+        <section class="interests section" id="interests">
+          <h2 class="section-title">Interests</h2>
+
+          <div class="interests__container bd-grid">
+            <div class="interests__content">
+              <i class='bx bxs-plane-alt icon'></i>
+              <span class="interests__name">Travel</span>
+            </div>
+            <div class="interests__content">
+              <i class='bx bx-movie-play icon'></i>
+              <span class="interests__name">Movie</span>
+            </div>
+            <div class="interests__content">
+              <i class='bx bx-music icon'></i>
+              <span class="interests__name">Music</span>
+            </div>
+            <div class="interests__content">
+              <i class='bx bx-swim icon'></i>
+              <span class="interests__name">Swim</span>
+            </div>
+            <div class="interests__content">
+              <i class='bx bx-book icon'></i>
+              <span class="interests__name">Read</span>
+            </div>
+            <div class="interests__content">
+              <i class='bx bx-podcast icon'></i>
+              <span class="interests__name">Podcast</span>
+            </div>
+            <div class="interests__content">
+              <i class='bx bx-palette icon'></i>
+              <span class="interests__name">Art</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <a href="#" class="scroll-top" id="scroll-top">
+    <i class='bx bxs-up-arrow-alt icon'></i>
+  </a>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

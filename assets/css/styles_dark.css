@@ -1,0 +1,17 @@
+/*==================== Dark Theme Variables ====================*/
+body.dark-theme {
+  --title-color: #F2F2F2;
+  --text-color: #BFBFBF;
+  --text-color-light: #808080;
+  --bg-color-container: #212121;
+  --bg-color-container-alt: #181616;
+  --bg-color-body: #2B2B2B;
+  --shadow-color-1: rgba(255, 255, 255, .1);
+  --shadow-color-2: rgba(255, 255, 255, .15);
+  --shadow-color-3: rgba(255, 255, 255, .2);
+  --shadow-color-4: rgba(232, 231, 231, .15);
+}
+
+.dark-theme .home__avatar {
+  background-image: url('../img/profile-photo_dark.jpg');
+}
