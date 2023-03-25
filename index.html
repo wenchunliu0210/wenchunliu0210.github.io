@@ -7,24 +7,25 @@
 
   <title>Wen Chun Liu's Responsive Resume CV</title>
 
-  <meta name="description" content="Wen Chun Liu's responsive resume CV with light/dark theme and export PDF features, created using native HTML, CSS, and JavaScript.">
+  <meta name="description" content="Wen Chun Liu's responsive resume CV with light/spring/dark theme and export PDF features, created using native HTML, CSS, and JavaScript.">
   <meta name="author" content="Wen Chun Liu" />
 
   <link rel="shortcut icon" href="/myFavicon.ico" type="image/x-icon" />
   <link rel="bookmark" href="/myFavicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/styles_dark.css">
-  <link rel="stylesheet" href="assets/css/styles_print.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/styles_spring.css" />
+  <link rel="stylesheet" href="/assets/css/styles_dark.css" />
+  <link rel="stylesheet" href="/assets/css/styles_print.css" />
 
   <meta property="og:url" content="https://wenchunliu0210.github.io/" />
   <meta property="og:title" content="Wen Chun Liu's Responsive Resume CV" />
-  <meta property="og:description" content="Wen Chun Liu's responsive resume CV with light/dark theme and export PDF features, created using native HTML, CSS, and JavaScript." />
+  <meta property="og:description" content="Wen Chun Liu's responsive resume CV with light/spring/dark theme and export PDF features, created using native HTML, CSS, and JavaScript." />
   <meta property="og:type" content="profile" />
   <meta property="og:image" content="" />
 
   <meta name="twitter:title" content="Wen Chun Liu's Responsive Resume CV" />
-  <meta name="twitter:description" content="Wen Chun Liu's responsive resume CV with light/dark theme and export PDF features, created using native HTML, CSS, and JavaScript." />
+  <meta name="twitter:description" content="Wen Chun Liu's responsive resume CV with light/spring/dark theme and export PDF features, created using native HTML, CSS, and JavaScript." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="" />
 
@@ -90,25 +91,11 @@
         <section class="home" id="home">
           <div class="home__container section bd-grid">
             <div class="home__introductions bd-grid">
-              <!-- <img
-                src="assets/img/profile-photo_light.jpg"
-                alt="avatar"
-                class="home__avatar"
-                id="home__avatar"
-              > -->
               <span class="home__avatar" id="home__avatar"></span>
               <h1 class="home__title">Wen Chun <b>Liu</b></h1>
               <h3 class="home__profession">Front-end Developer</h3>
               <!-- Mobile CV download button -->
               <div>
-                <!-- <a
-                  download=""
-                  href="assets/pdf/wenchunliu_Resume--light.pdf"
-                  class="home-pdf__button--mobile"
-                  id="home-pdf__button--mobile"
-                >
-                  Download
-                </a> -->
                 <button
                   class="home-pdf__button--mobile"
                   id="home-pdf__button--mobile"
@@ -134,8 +121,12 @@
               </span>
             </div>
           </div>
-          <!-- Dark/Light Theme Switch button -->
-          <i class='bx bx-moon change-theme' title="Theme" id="theme-button"></i>
+          <!-- Theme Switcher-->
+          <span class="change-theme-buttons">
+            <i class='bx bx-sun change-theme-button' title="Light Theme" id="light"></i>
+            <i class='bx bx-leaf change-theme-button' title="Spring Theme" id="spring"></i>
+            <i class='bx bx-moon change-theme-button' title="Dark Theme" id="dark"></i>
+          </span>
           <!-- PC CV download button -->
           <i class='bx bx-download home-pdf__button--pc' title="Generate PDF" id="pdf-button"></i>
         </section>

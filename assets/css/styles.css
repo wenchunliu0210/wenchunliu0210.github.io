@@ -225,6 +225,7 @@ img {
   border-radius: .35rem;
   transition: .3s;
   background-color: transparent;
+  cursor: pointer;
 }
 .home-pdf__button--mobile:hover {
   background-color: var(--text-color);
@@ -233,24 +234,32 @@ img {
 
 /*==================== Dark/Light Switch & PC PDF Button ====================*/
 .home-pdf__button--pc,
-.change-theme {
+.change-theme-buttons {
   position: absolute;
   top: 2.2rem;
   color: var(--text-color);
   font-size: 1.2rem;
-  cursor: pointer;
-  /* display: flex; ??? */
 }
-.change-theme {
+.change-theme-buttons {
   right: 0;
+  display: flex;
+  flex-direction: column;
 }
-.change-theme:hover {
+.change-theme-button {
+  cursor: pointer;
+}
+.change-theme-button:not(:first-child) {
+  margin-top: 1rem;
+}
+.change-theme-button.active,
+.change-theme-button:hover {
   color: var(--title-color);
   text-shadow: 1px 1px 1px var(--shadow-color-3);
 }
 .home-pdf__button--pc {
   display: none;
   left: 0;
+  cursor: pointer;
 }
 
 /*==================== Social ====================*/

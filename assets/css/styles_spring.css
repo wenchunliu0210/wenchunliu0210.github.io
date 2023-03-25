@@ -1,0 +1,18 @@
+/*==================== Spring Theme Variables ====================*/
+body.spring-theme {
+  /* Color */
+  --title-color: #395D73;
+  --text-color: #734939;
+  --text-color-light: #666357;
+  --bg-color-container: #FFFBF5;
+  --bg-color-container-alt: #FCEBCB;
+  --bg-color-body: #D3E0DC;
+  --shadow-color-1: rgba(73, 70, 86, .1);
+  --shadow-color-2: rgba(73, 70, 86, .15);
+  --shadow-color-3: rgba(73, 70, 86, .2);
+  --shadow-color-4: rgba(40, 29, 31, .15);
+}
+
+.spring-theme .home__avatar {
+  background-image: url('../img/profile-photo_spring.jpg');
+}

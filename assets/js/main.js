@@ -51,32 +51,43 @@ const scrollTopHandler = () => {
 window.addEventListener('scroll', scrollTopHandler)
 
 /*============================= Switch Dark/Light Theme =============================*/
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'bx-sun'
-const pdfButtonMobile = document.getElementById('home-pdf__button--mobile')
-
+let currentTheme = 'light' // Set light theme as default
+const THEME_TYPES = {
+  light: {
+    type: 'light-theme'
+  },
+  spring: {
+    type: 'spring-theme'
+  },
+  dark: {
+    type: 'dark-theme'
+  }
+}
 // Previously selected theme
 const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-
-// Get currently selected theme
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
 
 if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
+  currentTheme = selectedTheme
+  document.body.className = THEME_TYPES[currentTheme].type
 }
 
-themeButton.addEventListener('click', () => {
-  document.body.classList.toggle(darkTheme)
-  themeButton.classList.toggle(iconTheme)
+document.querySelectorAll('.change-theme-button').forEach(el => {
+  const theme = el.getAttribute('id')
 
-  localStorage.setItem('selected-theme', getCurrentTheme())
-  localStorage.setItem('selected-icon', getCurrentIcon())
+  if (theme === currentTheme) {
+    el.classList.add('active')
+  } else {
+    el.classList.remove('active')
+  }
+
+  el.addEventListener('click', () => {
+    document.getElementById(currentTheme).classList.remove('active')
+    currentTheme = theme
+    document.getElementById(currentTheme).classList.add('active')
+    document.body.className = THEME_TYPES[currentTheme].type
+    localStorage.setItem('selected-theme', currentTheme)
+  })
 })
-
 /*============================= Reduce the Size & Print on An A4 Sheet =============================*/
 const scaleCV = () => {
   document.body.classList.add('scale-cv')
@@ -89,13 +100,12 @@ const removeScale = () => {
 
 /*============================= Download PDF from Folder =============================*/
 const downloadPDF = async () => {
-  const theme = getCurrentTheme()
-  const response = await fetch(`assets/pdf/resumeCV--${theme}.pdf`)
+  const response = await fetch(`assets/pdf/resumeCV--${currentTheme}.pdf`)
   const blob = await response.blob()
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
-  link.setAttribute('download', `wenchunliu_Resume--${theme}.pdf`)
+  link.setAttribute('download', `wenchunliu_Resume--${currentTheme}.pdf`)
   link.click()
   link.addEventListener('load', () => {
     URL.revokeObjectURL(url)
@@ -107,12 +117,11 @@ const downloadPDF = async () => {
 const pdfButton = document.getElementById('pdf-button')
 
 const generatePDF = () => {
-  const theme = getCurrentTheme()
   return new Promise((resolve, reject) => {
     const element = document.getElementById('resume-pdf-area')
     const opt = {
       margin:       0,
-      filename:     `wenchunliu_Resume--${theme}.pdf`,
+      filename:     `wenchunliu_Resume--${currentTheme}.pdf`,
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 3 },
       jsPDF:        { format: 'a4', orientation: 'portrait' }
