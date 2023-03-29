@@ -143,3 +143,14 @@ pdfButton.addEventListener('click', () => {
     console.log('Download PDF Failed: ', error)
   })
 })
+
+/*============ Disable PC PDF Button If Not Scroll To the Top To Avoid PDF Layout Incorrect Problem ============*/
+const pdfButtonDisableHandler = () => {
+  if (this.scrollY !== 0) {
+    pdfButton.setAttribute('disabled', "true")
+  } else {
+    pdfButton.removeAttribute('disabled')
+  }
+}
+
+window.addEventListener('scroll', pdfButtonDisableHandler)

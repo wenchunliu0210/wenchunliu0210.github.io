@@ -260,6 +260,12 @@ img {
   display: none;
   left: 0;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.home-pdf__button--pc:disabled {
+  opacity: .2;
+  cursor: not-allowed;
 }
 
 /*==================== Social ====================*/
