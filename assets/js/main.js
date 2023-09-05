@@ -100,12 +100,12 @@ const removeScale = () => {
 
 /*============================= Download PDF from Folder =============================*/
 const downloadPDF = async () => {
-  const response = await fetch(`assets/pdf/resumeCV--${currentTheme}.pdf`)
+  const response = await fetch(`assets/pdf/resumeCV--${currentTheme}-2.pdf`)
   const blob = await response.blob()
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
-  link.setAttribute('download', `wenchunliu_Resume--${currentTheme}.pdf`)
+  link.setAttribute('download', `wenchunliu_Resume--${currentTheme}-2.pdf`)
   link.click()
   link.addEventListener('load', () => {
     URL.revokeObjectURL(url)

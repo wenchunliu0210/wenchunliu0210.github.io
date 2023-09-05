@@ -35,7 +35,7 @@ body.scale-cv {
 }
 
 .scale-cv .experience__line {
-  height: calc(100% + 1rem);
+  height: calc(100%);
   transform: translate(4px, 0);
 }
 

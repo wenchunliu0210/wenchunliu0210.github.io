@@ -162,7 +162,7 @@ img {
 
 /*==================== Section ====================*/
 .section {
-  padding: 1.5rem 0;
+  padding: 1.33rem 0;
 }
 .section-title {
   color: var(--title-color);
@@ -317,7 +317,12 @@ img {
 .language__name {
   display: flex;
   align-items: center;
+}
+.language__name {
   margin-bottom: var(--margin-2);
+}
+.skill__name {
+  margin-bottom: var(--margin-1);
 }
 .skill__circle,
 .language__circle {
@@ -348,7 +353,7 @@ img {
 .experience__line {
   display: block;
   width: 2px;
-  height: calc(100% + 1.5rem);
+  height: calc(100%);
   background-color: var(--text-color-light);
   transform: translate(5px, 0);
 }
@@ -482,5 +487,9 @@ img {
   .interests__container {
     grid-template-columns: repeat(4, max-content);
     column-gap: 5rem;
+  }
+
+  .skill__name {
+    margin-bottom: var(--margin-2);
   }
 }
