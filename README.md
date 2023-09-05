@@ -4,14 +4,14 @@
 #### Demo:
 
 **PC**
-![Light Mode](https://i.imgur.com/6IYwk7z.png)
-![Dark Mode](https://i.imgur.com/iZji78h.png)
-![Spring Mode](https://i.imgur.com/LOEpyZn.png)
+<img src="https://i.imgur.com/6IYwk7z.png" width="50%" alt="light mode resume(PC)" />
+<img src="https://i.imgur.com/iZji78h.png" width="50%" alt="dark mode resume(PC)" />
+<img src="https://i.imgur.com/LOEpyZn.png" width="50%" alt="spring mode resume(PC)" />
 
 **Mobile**
-![Light Mode](https://i.imgur.com/KHeWfHg.png)
-![Dark Mode with Menu Panel](https://i.imgur.com/phKAFNN.png)
-![Spring Mode with Scroll to Top Button](https://i.imgur.com/R2N5mcW.png)
+<img src="https://i.imgur.com/KHeWfHg.png" width="30%" alt="light mode resume(Mobile)" />
+<img src="https://i.imgur.com/phKAFNN.png" width="30%" alt="dark mode resume(Mobile)" />
+<img src="https://i.imgur.com/R2N5mcW.png" width="30%" alt="spring mode resume(Mobile)" />
 
 #### Technologies:
 - Free Open Source Icons - [Boxicons](https://boxicons.com/)
